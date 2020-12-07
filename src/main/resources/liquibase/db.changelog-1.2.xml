@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet id="2" author="author2">
+        <sql>
+            CREATE TABLE T_Person(FName VARCHAR(20),FAge INT DEFAULT 20,FId INT NOT NULL,PRIMARY KEY(FId));
+        </sql>
+    </changeSet>
+
+    <changeSet id="3" author="panli">
+       <sql>
+          alter TABLE T_Person add phone varchar(255) comment '电话';
+       </sql>
+    </changeSet>
+
+    <changeSet id="4" author="author2">
+        <sql>
+            insert into T_Person(FName,FAge ,FId,phone) values('吴凌胜',22,3,'1234444');
+            insert into T_Person(FName,FAge ,FId,phone) values('吴凌胜',22,4,'1234444');
+        </sql>
+    </changeSet>
+</databaseChangeLog>
